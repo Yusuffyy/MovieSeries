@@ -9,11 +9,11 @@ const PersonDetails = () => {
   const [movieCredits, setMovieCredits] = useState([]);
   const [tvCredits, setTvCredits] = useState([]);
   const [poster, setPoster] = useState("https://image.tmdb.org/t/p/w500");
-
+  const API_KEY=process.env.REACT_APP_API_KEY;
   useEffect(() => {
     const fetchPersonDetails = async () => {
       try {
-        const res = await axios.get(`https://api.themoviedb.org/3/person/${id}?language=en-US&api_key=8f9eb3b363239045387cf1221776d908`);
+        const res = await axios.get(`https://api.themoviedb.org/3/person/${id}?language=en-US&api_key=${API_KEY}`);
         setPerson(res.data);
       } catch (error) {
         console.error('Error fetching person details:', error);
@@ -37,7 +37,7 @@ const PersonDetails = () => {
   useEffect(() => {
     const fetchTvCredits = async () => {
       try {
-        const res = await axios.get(`https://api.themoviedb.org/3/person/${id}/tv_credits?language=tr-TR&api_key=8f9eb3b363239045387cf1221776d908`);
+        const res = await axios.get(`https://api.themoviedb.org/3/person/${id}/tv_credits?language=tr-TR&api_key=${API_KEY}`);
         setTvCredits(res.data.cast);
       } catch (error) {
         console.error('Error fetching TV credits:', error);

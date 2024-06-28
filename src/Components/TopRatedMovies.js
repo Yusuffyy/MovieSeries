@@ -8,7 +8,7 @@ const TopRatedMovies = () => {
   const [item, setItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true); 
   const [totalPages, setTotalPages] = useState(1);
- 
+  const API_KEY=process.env.REACT_APP_API_KEY;
   const loadMore = () => {
     setPage(page + 1); // Increase the page number to load more data
   };
