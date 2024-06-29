@@ -11,8 +11,6 @@ import SeriesDetails from './SeriesDetails';
 import TopRatedSeries from './TopRatedSeries';
 import PersonDetails from './PersonDetails'
 import MovieSeriesSearch from './MovieSeriesSearch';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Layout = () => {
     const [moviesvis, setMovievis] = useState(false);
@@ -56,7 +54,7 @@ const Layout = () => {
                       <nav className=''>
                     <Link className="flex font-bold text-white pl-3 cursor-pointer hover:text-red-500" to="/searching">
                            Film ve Dizi ara
-                   <FontAwesomeIcon icon={faSearch} className="my-1 mx-2" />
+                  
                   </Link>
                   </nav>
                     </div>
